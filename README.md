@@ -13,7 +13,8 @@ Android Cordova 插件开发之自定义插件生成安装包,首先说明下为
      args:web以json的数据格式传递给Android native，CordovaArgs 是对JSONArray 的一个封装;
      callbackContext:这个是回调给web，有success和error两种回调方法。可以把参数回调给web端
   列如：
-  @Override
+  
+    @Override
     public boolean execute(String action, CordovaArgs args, CallbackContext callbackContext) throws JSONException {
         if("show".equals(action)){
             AlertDialog.Builder builder = new AlertDialog.Builder(cordova.getActivity());
@@ -39,10 +40,8 @@ Android Cordova 插件开发之自定义插件生成安装包,首先说明下为
         return super.execute(action, args, callbackContext);
     }
     
-    如果web使用了CustomDialog插件，并调用show方法（action）。这时候，会弹出一个系统窗口，会显示web传过来的消息内容，点击确定，回调web，
-    告诉它调用成功，取消则是失败。最后记得return true（表示调用成功）。
-    
-    
+  如果web使用了CustomDialog插件，并调用show方法（action）。这时候，会弹出一个系统窗口，会显示web传过来的消息内容，点击确定，回调web，
+  告诉它调用成功，取消则是失败。最后记得return true（表示调用成功）。  
     
     
 
